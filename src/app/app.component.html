@@ -3,18 +3,37 @@
   <h1>
     Welcome to {{title}}!
   </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <!--<img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">-->
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+<div #container id="container" (mousedown)="container_MouseDown($event)"
+     (mousemove)="container_MouseMove($event)"
+     (mouseup)="container_MouseUp($event)">
+
+  <div #rubberband id="rubberband"></div>
+  <div #el_1 class="item"></div>
+  <div #el_2 class="item" style="left:400px"></div>
+  <div #el_3 class="item" style="left:800px"></div>
+
+  <div #el_4 class="item" style="left:400px;top:200px;display: none"></div>
+
+</div>
+
+
+
+<input type="button" class="button" (click)="addElement()" value="add element"/>
+
+
+<!--<h3>Here are some links to help you start: </h3>-->
+<!--<ul>-->
+  <!--<li>-->
+    <!--<h4><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h4>-->
+  <!--</li>-->
+  <!--<li>-->
+    <!--<h4><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h4>-->
+  <!--</li>-->
+  <!--<li>-->
+    <!--<h4><a target="_blank" href="https://blog.angular.io/">Angular blog</a></h4>-->
+  <!--</li>-->
+<!--</ul>-->
 
