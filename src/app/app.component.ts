@@ -93,11 +93,11 @@ console.log(this.elRef);
         anchors: ['Left']
       }, this.common2);
 
-      jsPlumb.connect({
-        source: me.el_1.nativeElement,
-        target: me.el_3.nativeElement,
-        overlays: [ ['Arrow' , { width: 12, length: 12, location: 0.67 }] ]
-         }, this.common2 );
+      // jsPlumb.connect({
+      //   source: me.el_1.nativeElement,
+      //   target: me.el_3.nativeElement,
+      //   overlays: [ ['Arrow' , { width: 12, length: 12, location: 0.67 }] ]
+      //    }, this.common2 );
     });
 
   }
@@ -138,4 +138,14 @@ console.log(this.elRef);
   }
 
 
+  addConnection() {
+    const me = this;
+    jsPlumb.ready(() => {
+      jsPlumb.connect({
+        source: me.el_1.nativeElement,
+        target: me.el_3.nativeElement,
+        overlays: [ ['Arrow' , { width: 12, length: 12, location: 0.67 }] ]
+      }, this.common2 );
+    });
+  }
 }
