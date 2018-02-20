@@ -20,6 +20,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   common2 = {
     isSource: true,
     isTarget: true
+    // endpoint: 'Rectangle'
     // connector: ['Straight']
   };
 
@@ -92,11 +93,11 @@ console.log(this.elRef);
         anchors: ['Left']
       }, this.common2);
 
-      // jsPlumb.connect({
-      //   source: me.el_1.nativeElement,
-      //   target: me.el_3.nativeElement,
-      //   overlays: [ ['Arrow' , { width: 12, length: 12, location: 0.67 }] ]
-      //    }, common );
+      jsPlumb.connect({
+        source: me.el_1.nativeElement,
+        target: me.el_3.nativeElement,
+        overlays: [ ['Arrow' , { width: 12, length: 12, location: 0.67 }] ]
+         }, this.common2 );
     });
 
   }
