@@ -1,0 +1,29 @@
+
+
+<div #container id="container1" (mousedown)="container_MouseDown($event)"
+     (mousemove)="container_MouseMove($event)"
+     (mouseup)="container_MouseUp($event)">
+
+  <div #rubberband id="rubberband"></div>
+  <div #el_1 class="item"></div>
+  <div #el_2 class="diamond" style="left:400px"></div>
+  <div #el_3 class="parallelogram" style="left:800px"></div>
+
+  <div #el_4 class="circle" style="left:400px;top:200px;display: none"></div>
+
+  <!--<div #circle class="circle" id="circle" style="left:40px;top:300px;"></div>-->
+
+  <!--<div #oval class="oval" id="oval" style="left:400px;top:300px;"></div>-->
+
+  <!--<div id="parallelogram"></div>-->
+
+  <!--<div id="diamond"></div>-->
+
+</div>
+
+
+
+<input type="button" class="button" (click)="addElement()" value="add element"/>
+
+<input type="button" class="button" (click)="addConnection()" value="add connector"/>
+

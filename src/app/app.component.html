@@ -1,49 +1,48 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <!--<img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">-->
+<!--<h1>-->
+  <!--{{title}}-->
+<!--</h1>-->
+
+<div class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/home">{{title}}</a>
+    <ul class="nav navbar-nav">
+      <!--<li routerLinkActive="active"><a routerLink="/home">Home</a></li>-->
+      <!--<li routerLinkActive="active"><a routerLink="/login">User</a></li>-->
+      <!--<li routerLinkActive="active"><a routerLink="/admin">Admin</a></li>-->
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <p class="navbar-text" *ngIf="isAdminUser">You are admin!</p>
+      <p class="navbar-text" *ngIf="isUser">You are user!</p>
+      <li *ngIf="!(isUser || isAdminUser)"><button class="btn navbar-btn" (click)="login()">Login</button></li>
+      <li *ngIf="isUser || isAdminUser"><button class="btn navbar-btn" (click)="logout()">Logout</button></li>
+    </ul>
+  </div>
 </div>
 
-<div #container id="container" (mousedown)="container_MouseDown($event)"
-     (mousemove)="container_MouseMove($event)"
-     (mouseup)="container_MouseUp($event)">
+<!--<div class="row">-->
+  <div   class="col-md-1 sidebar">
+    <!--<div class="container-fluid">-->
+    <ul *ngIf="isAdminUser" class="nav nav-sidebar">
+      <li routerLinkActive="active"><a routerLink="/flowchart">flowchart</a></li>
+      <li routerLinkActive="active"><a routerLink="/flowchart">flowchart</a></li>
+    </ul>
+    <!--</div>-->
+  </div>
 
-  <div #rubberband id="rubberband"></div>
-  <div #el_1 class="item"></div>
-  <div #el_2 class="diamond" style="left:400px"></div>
-  <div #el_3 class="parallelogram" style="left:800px"></div>
+  <div class="container center-block">
+    <!--<div class="panel-body">-->
+      <router-outlet></router-outlet>
+    <!--</div>-->
+  </div>
 
-  <div #el_4 class="circle" style="left:400px;top:200px;display: none"></div>
-
-  <!--<div #circle class="circle" id="circle" style="left:40px;top:300px;"></div>-->
-
-  <!--<div #oval class="oval" id="oval" style="left:400px;top:300px;"></div>-->
-
-  <!--<div id="parallelogram"></div>-->
-
-  <!--<div id="diamond"></div>-->
-
-</div>
-
-
-
-<input type="button" class="button" (click)="addElement()" value="add element"/>
-
-<input type="button" class="button" (click)="addConnection()" value="add connector"/>
-
-
-<!--<h3>Here are some links to help you start: </h3>-->
-<!--<ul>-->
-  <!--<li>-->
-    <!--<h4><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h4>-->
-  <!--</li>-->
-  <!--<li>-->
-    <!--<h4><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h4>-->
-  <!--</li>-->
-  <!--<li>-->
-    <!--<h4><a target="_blank" href="https://blog.angular.io/">Angular blog</a></h4>-->
-  <!--</li>-->
-<!--</ul>-->
+  <!--<div  class="col-md-2 sidebar">-->
+    <!--&lt;!&ndash;<div class="container-fluid">&ndash;&gt;-->
+    <!--<ul  *ngIf="isAdminUser" class="nav nav-sidebar">-->
+      <!--<li routerLinkActive="active"><a routerLink="/flowchart">flowchart</a></li>-->
+      <!--<li routerLinkActive="active"><a routerLink="/flowchart">flowchart</a></li>-->
+    <!--</ul>-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--</div>-->
+<!--</div>-->
 
